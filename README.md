@@ -1,8 +1,6 @@
-# 🎓 AI Agent Architecture for Campus Event, Facility & Booking Management
+# AI Agent Architecture for Campus Event, Facility & Booking Management
 
----
-
-## 📌 Problem Statement
+## Problem Statement
 
 Design an AI Agent for a college campus that:
 
@@ -16,24 +14,20 @@ Design an AI Agent for a college campus that:
 
 The system must demonstrate multi-step reasoning, internal tool selection, constraint validation, and response generation.
 
----
-
-# 🧠 System Overview
+## System Overview
 
 This architecture implements an Agentic AI system that intelligently routes user requests to appropriate internal campus systems. The AI Agent performs intent detection, decision-making, constraint validation, and confirmation handling before producing a final response.
 
 The architecture is modular, scalable, and production-ready, designed around tool orchestration principles.
 
----
-
-# 🏗️ Architecture Diagram
+## Architecture Diagram
 
 ```mermaid
 flowchart TD
 
 A[User - Web/App/Chat Interface] --> B[API Gateway / Input Handler]
 
-B --> C[AI Agent Core\n(LLM + Memory + Planner + Tool Selector)]
+B --> C["AI Agent Core\n(LLM + Memory + Planner + Tool Selector)"]
 
 C --> D{Intent Detection}
 
@@ -62,9 +56,7 @@ I --> Q[LLM Response Generator]
 Q --> R[Final Response to User]
 ```
 
----
-
-# 🔄 System Flow Explanation
+## System Flow Explanation
 
 1. The user submits a query via web or chat interface.
 2. The API Gateway forwards the request to the AI Agent Core.
@@ -80,11 +72,9 @@ Q --> R[Final Response to User]
 8. The Response Aggregator combines all outputs.
 9. The LLM formats a clear, structured final response.
 
----
+## Core Internal Components
 
-# 🧩 Core Internal Components
-
-## 1️⃣ AI Agent Core
+### 1. AI Agent Core
 - Large Language Model (LLM)
 - Conversation Memory
 - Planning Module
@@ -92,9 +82,7 @@ Q --> R[Final Response to User]
 
 Responsible for reasoning and orchestration.
 
----
-
-## 2️⃣ Intent Detection Module
+### 2. Intent Detection Module
 Classifies requests into:
 - Event Information
 - Facility Information
@@ -103,89 +91,69 @@ Classifies requests into:
 
 Can be implemented via zero-shot classification or fine-tuned transformer models.
 
----
-
-## 3️⃣ Event Management System
+### 3. Event Management System
 Stores:
 - Upcoming events
 - Schedules
 - Event locations
 
----
-
-## 4️⃣ Facility Information System
+### 4. Facility Information System
 Stores:
 - Lab details
 - Room capacity
 - Auditorium information
 - Operating hours
 
----
-
-## 5️⃣ Availability Engine
+### 5. Availability Engine
 Checks:
 - Date and time conflicts
 - Maintenance schedules
 - Concurrent bookings
 
----
-
-## 6️⃣ Constraint Validation Engine
+### 6. Constraint Validation Engine
 Validates:
 - Capacity limits
 - Role-based access
 - Operational restrictions
 - Booking overlap
 
----
-
-## 7️⃣ Confirmation Manager
+### 7. Confirmation Manager
 Ensures explicit user approval before booking execution.
 
----
-
-## 8️⃣ Booking Service
+### 8. Booking Service
 - Writes booking record into Institutional Database
 - Maintains audit logs
 
----
-
-## 9️⃣ Response Aggregator
+### 9. Response Aggregator
 Combines outputs from multiple systems before response generation.
 
----
+## Libraries & Frameworks
 
-# ⚙️ Libraries & Frameworks
+### LLM & Agent Orchestration
+- **LangChain / LlamaIndex** - Tool orchestration and agent execution
+- **OpenAI API / LLM API** - Reasoning engine
 
-## LLM & Agent Orchestration
-- **LangChain / LlamaIndex** → Tool orchestration and agent execution
-- **OpenAI API / LLM API** → Reasoning engine
+### Backend
+- **FastAPI** - API layer for scalable microservices
 
-## Backend
-- **FastAPI** → API layer for scalable microservices
+### Database
+- **PostgreSQL** - Institutional records
+- **Redis** - Session memory & caching
 
-## Database
-- **PostgreSQL** → Institutional records
-- **Redis** → Session memory & caching
+### Vector Database (Optional Enhancement)
+- **FAISS / Pinecone** - Semantic retrieval for facility descriptions
 
-## Vector Database (Optional Enhancement)
-- **FAISS / Pinecone** → Semantic retrieval for facility descriptions
-
-## Intent Detection
+### Intent Detection
 - **HuggingFace Transformers**
 
----
-
-# 🔐 Security & Governance
+## Security & Governance
 
 - Authentication & Authorization layer
 - Role-Based Access Control (RBAC)
 - Audit logging for bookings
 - Data encryption in transit
 
----
-
-# 📈 Scalability & Future Enhancements
+## Scalability & Future Enhancements
 
 - Microservices deployment
 - Load balancing
@@ -193,9 +161,7 @@ Combines outputs from multiple systems before response generation.
 - Multi-campus support
 - Feedback loop for agent improvement
 
----
-
-# 🎯 Why This Architecture is Effective
+## Why This Architecture is Effective
 
 - Multi-step reasoning
 - Dynamic tool selection
@@ -206,10 +172,8 @@ Combines outputs from multiple systems before response generation.
 
 This design demonstrates intelligent decision-making using an Agentic AI orchestration approach rather than a simple chatbot architecture.
 
----
-
-# 👨💻 Author
+## Author
 
 Siddharth Nama  
-B.Tech CSE – IIIT Bhagalpur  
+B.Tech CSE - IIIT Bhagalpur  
 AI/ML Engineering Campus 2026
