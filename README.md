@@ -130,21 +130,21 @@ Combines outputs from multiple systems before response generation.
 ## Libraries & Frameworks
 
 ### LLM & Agent Orchestration
-- **LangChain / LlamaIndex** - Tool orchestration and agent execution
-- **OpenAI API / LLM API** - Reasoning engine
+- **LangChain / LlamaIndex**: Chosen for their robust abstraction layers that simplify tool orchestration, memory management, and agentic workflows. They allow for easy integration of multiple tools and LLMs.
+- **OpenAI API / LLM API**: Selected as the primary reasoning engine due to state-of-the-art performance in intent detection and complex instruction following.
 
 ### Backend
-- **FastAPI** - API layer for scalable microservices
+- **FastAPI**: Selected for its high performance (asynchronous capabilities), native support for concurrency (essential for LLM latency), and automatic OpenAPI documentation. It is ideal for building scalable microservices.
 
 ### Database
-- **PostgreSQL** - Institutional records
-- **Redis** - Session memory & caching
+- **PostgreSQL**: Chosen for robust relation data storage. It is essential for maintaining structured records of events, facilities, and bookings with ACID compliance.
+- **Redis**: Used for low-latency session memory and caching frequently accessed data (like facility lists) to improve agent response times.
 
 ### Vector Database (Optional Enhancement)
-- **FAISS / Pinecone** - Semantic retrieval for facility descriptions
+- **FAISS / Pinecone**: Recommended for semantic retrieval. Allows the agent to find facilities based on vague descriptions (e.g., "quiet place with a projector") rather than exact keyword matches.
 
 ### Intent Detection
-- **HuggingFace Transformers**
+- **HuggingFace Transformers**: Used for local, low-latency intent classification pipelines if a dedicated smaller model is preferred over calling a large LLM for every routing decision.
 
 ## Security & Governance
 
